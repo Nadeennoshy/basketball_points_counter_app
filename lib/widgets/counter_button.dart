@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CounterButton extends StatelessWidget {
-  const CounterButton({super.key,required this.counterText});
+  const CounterButton({super.key,required this.counterText,required this.count});
   final String counterText;
+  final Function() count;
+
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class CounterButton extends StatelessWidget {
           backgroundColor: const Color(0xff0396FE),
           fixedSize: const Size(140,50),
         ),
-        onPressed: () {},
+        onPressed: count,
         child: Text(counterText,
           style: const TextStyle(
             color: Colors.white,

@@ -2,9 +2,16 @@ import 'package:basketball_points_counter_app/widgets/reset_button.dart';
 import 'package:basketball_points_counter_app/widgets/team_column.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
+
   const HomeView({super.key});
 
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  int teamCount = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,20 +24,30 @@ class HomeView extends StatelessWidget {
           ),
         ),
       ),
-      body: const Column(
+      body: Column(
         children: [
           SizedBox(
             height: 400,
             child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TeamColumn(teamName: 'Team A'),
-                VerticalDivider(),
-                TeamColumn(teamName: 'Team B')
+                TeamColumn(teamName: 'Team A',
+                teamCount: teamCount,
+                ),
+                const VerticalDivider(),
+                TeamColumn(teamName: 'Team B',
+                teamCount: teamCount,
+                ),
               ],
             ),
           ),
-          ResetButton(),
+          ResetButton(
+            reset: (){
+              setState(() {
+              teamCount = 0;
+              });
+            },
+          ),
         ],
       ),
     );
