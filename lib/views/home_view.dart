@@ -41,7 +41,6 @@ class HomeView extends StatelessWidget {
                       teamCount:
                           BlocProvider.of<CounterCubit>(context).teamBPoints,
                     ),
-                           
                   ],
                 ),
               ),

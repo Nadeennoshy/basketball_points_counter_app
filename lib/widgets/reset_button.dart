@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ResetButton extends StatelessWidget {
-  const ResetButton({super.key,required this.reset});
+  const ResetButton({super.key, required this.reset});
   final Function() reset;
 
   @override
@@ -14,7 +14,7 @@ class ResetButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2),
           ),
-        fixedSize: const Size(150,50),
+          fixedSize: const Size(150, 50),
         ),
         child: const Text(
           'RESET',
