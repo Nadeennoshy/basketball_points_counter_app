@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CounterButton extends StatelessWidget {
   const CounterButton({super.key,required this.counterText,required this.count});
   final String counterText;
-  final Function() count;
+  final void Function()? count;
 
 
   @override
